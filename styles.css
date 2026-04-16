@@ -177,9 +177,21 @@ nav a:hover {
 /* Cards */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
     margin-top: 40px;
+}
+
+@media (min-width: 1120px) {
+    .cards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
@@ -201,6 +213,23 @@ nav a:hover {
     margin-bottom: 0;
 }
 
+.image-card {
+    padding: 0;
+    display: grid;
+    grid-template-rows: 200px auto;
+    overflow: hidden;
+}
+
+.image-card .card-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+
+.image-card .card-content {
+    padding: 25px;
+}
 
 /* Footer */
 footer {
